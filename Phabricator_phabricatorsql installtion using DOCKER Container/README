@@ -1,0 +1,21 @@
+Interactive switching mode
+sudo update-alternatives --config php
+set php -v 
+7.1
+add lines 
+#sudo nano /etc/php/phpversionfolder/apache2/php.ini
+file_uploads = On
+allow_url_fopen = On
+short_open_tag = On
+memory_limit = 256M
+upload_max_filesize = 100M
+max_execution_time = 360
+date.timezone = asia/singapore
+
+
+# cd /var/www/html/phabricator/
+# ./bin/config set mysql.host localhost
+# ./bin/config set mysql.user admin
+# ./bin/config set mysql.pass 123345
+# ./bin/config set mysql.port 3306 (mysql port run bydefault 3306)
+#./bin/storage upgrade --user admin  --password 123345
