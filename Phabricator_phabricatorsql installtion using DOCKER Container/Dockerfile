@@ -13,7 +13,7 @@ RUN cd /var/www/html/ && \
     git clone https://github.com/phacility/phabricator.git
 ADD phabricator.conf /etc/apache2/sites-enabled/phabricator
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y git mysql-server apache2 libapache2-mod-php php php-mysql php-gd php-curl php-apcu php-cli php-json php-mbstring
+RUN sudo add-apt-repository ppa:git-core/ppa
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y git git-core mysql-server apache2 libapache2-mod-php php php7.1-zip php-[extname] php-mysql php-gd php-curl php-apcu php-cli php-json php-mbstring
 RUN sudo a2enmod rewrite
 #CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf"]
