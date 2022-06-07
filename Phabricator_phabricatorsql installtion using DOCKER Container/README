@@ -31,6 +31,7 @@ check all lines cat phabricator/conf/local/local.json
 
  create repossitory dircetory 
  #mkdir /var/repo
+ #sudo chmod -R 777 /var/repo/
  #chown -R www-data:www-data /var/repo/
 Add entry in VISUDO file 
 www-data  ALL=(daemon-user) SETENV: NOPASSWD: /usr/bin/git-upload-pack, /var/www/html/phabricator/support/bin/git-http-backend, /usr/bin/hg
