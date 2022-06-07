@@ -19,3 +19,19 @@ date.timezone = asia/singapore
 # ./bin/config set mysql.pass 123345
 # ./bin/config set mysql.port 3306 (mysql port run bydefault 3306)
 #./bin/storage upgrade --user admin  --password 123345
+#./bin/config set phd.user www-data
+#./bin/config set diffusion.ssh-port 222
+#./bin/config set diffusion.ssh-user vcs-user
+#./bin/config set diffusion.allow-http-auth true
+#./bin/config set repository.default-local-path /var/repo
+#./bin/phd restart
+# ./bin/phd start
+
+check all lines cat phabricator/conf/local/local.json 
+
+ create repossitory dircetory 
+ #mkdir /var/repo
+ #chown -R www-data:www-data /var/repo/
+Add entry in VISUDO file 
+www-data  ALL=(daemon-user) SETENV: NOPASSWD: /usr/bin/git-upload-pack, /var/www/html/phabricator/support/bin/git-http-backend, /usr/bin/hg
+
